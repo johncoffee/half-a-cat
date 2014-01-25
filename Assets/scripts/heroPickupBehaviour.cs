@@ -3,6 +3,8 @@ using System.Collections;
 
 public class heroPickupBehaviour : MonoBehaviour {
 
+	public bool switching;
+
 	public bool isInFrontOfAHidingPlace = false;
 	public GameObject currentHidingPlace;
 
@@ -54,7 +56,11 @@ public class heroPickupBehaviour : MonoBehaviour {
 //		Debug.Log ("OnTriggerEnter");
 	}
 
+<<<<<<< HEAD
 	void OnTriggerExit(Collider other) {
+=======
+	void OnTriggerExit2D(Collider2D other) {
+>>>>>>> newstuff
 //		Debug.Log ("OnTriggerExit");
 		isInFrontOfAHidingPlace = false;
 	}
