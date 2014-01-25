@@ -3,5 +3,6 @@
 /library
 *.csproj
 *.unityproj
-*.sln
+*.sln 
+.DS_Store
 

@@ -13,19 +13,6 @@ public class heroPickupBehaviour : MonoBehaviour {
 	void Start () {
 	
 	}
-<<<<<<< HEAD
-
-	public void SetPersonality(int newperson){
-		personality = newperson;
-		if (personality == 1 ){
-			renderer.material.color = Color.red;
-		}
-		else {
-			renderer.material.color = Color.blue;
-		}
-	}
-=======
->>>>>>> origin/master
 	
 	// Update is called once per frame
 	void Update () {

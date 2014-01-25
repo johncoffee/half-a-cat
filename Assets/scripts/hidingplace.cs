@@ -3,7 +3,7 @@ using System.Collections;
 
 public class hidingplace : MonoBehaviour {
 
-	private int numberOfThings = 3;
+	private int numberOfThings = 0;
 
 	public int NumberOfThings {
 		get {
