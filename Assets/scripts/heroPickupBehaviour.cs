@@ -3,6 +3,8 @@ using System.Collections;
 
 public class heroPickupBehaviour : MonoBehaviour {
 
+	public bool switching;
+
 	public bool isInFrontOfAHidingPlace = false;
 	public GameObject currentHidingPlace;
 

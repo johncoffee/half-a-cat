@@ -48,6 +48,8 @@ public class GameLogic : MonoBehaviour
 	    yield return new WaitForSeconds (playerTurnDuration);
 
 		hero.rigidbody2D.velocity = new Vector2 (0,0);
+		hero.switching = true;
+
 		Debug.Log (hero.rigidbody2D.velocity);
 		Cloak ();
 
@@ -55,6 +57,8 @@ public class GameLogic : MonoBehaviour
 
 		switchPlayer ();
 	    initTurn ();
+
+		hero.switching = false;
 	}
 
 	
