@@ -35,22 +35,16 @@ public class controller : MonoBehaviour {
 			Vector2 move = rigidbody2D.velocity;
 			move.x += moveSpeed;
 			rigidbody2D.velocity = move;
-			
-//			rigidbody2D.AddForce(Vector2.right * moveSpeed);
 		}
 		else if (Input.GetKey (KeyCode.LeftArrow) || Input.GetKey (KeyCode.A)) {
 			Vector2 move = rigidbody2D.velocity;
 			move.x -= moveSpeed;
 			rigidbody2D.velocity = move;
-			
-//			rigidbody2D.AddForce(Vector2.right * -moveSpeed);
+
 		}
 
 
 		if (Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown (KeyCode.W)) {
-//			Vector3 move = transform.position;
-//			move.y += moveSpeed;
-//			transform.position = move;
 			rigidbody2D.AddForce(Vector2.up * jumpSpeed);
 		}
 
