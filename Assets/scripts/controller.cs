@@ -8,9 +8,17 @@ public class controller : MonoBehaviour {
 
 	public float horzFriction = 0.5f;
 
+	private bool jumped;
+
 	// Use this for initialization
 	void Start () {
 	
+	}
+
+	void OnCollisionEnter2D(Collision2D collision) {
+		if (collision.gameObject.tag == "Floor") {
+			jumped = false;
+		}
 	}
 
 	void FixedUpdate(){
@@ -47,12 +55,15 @@ public class controller : MonoBehaviour {
 		}
 
 
-		if (Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown (KeyCode.W)) {
+		if ((Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown (KeyCode.W)) && !jumped) {
 //			Vector3 move = transform.position;
 //			move.y += moveSpeed;
 //			transform.position = move;
 			rigidbody2D.AddForce(Vector2.up * jumpSpeed);
+
+			jumped = true;
 		}
 
 	}
+
 }
