@@ -26,7 +26,7 @@ public class heroPickupBehaviour : MonoBehaviour {
 				currentHidingPlace.GetComponent<hidingplace>().NumberOfThings += 1;
 				numberOfThings--;
 				player1Points++;
-				player1PointsGUI.text = player1Points.ToString();
+				player1PointsGUI.text = player1Points.ToString() + " points";
 				Debug.Log("placed thing");
 			}
 			else if (personality == 1 && isInFrontOfAHidingPlace) {
@@ -36,7 +36,7 @@ public class heroPickupBehaviour : MonoBehaviour {
 					numberOfThings++;
 					Debug.Log("took thing");
 					player2Points++;
-					player2PointsGUI.text = player2Points.ToString();
+					player2PointsGUI.text = player2Points.ToString() + " points";
 				}
 			}
 
