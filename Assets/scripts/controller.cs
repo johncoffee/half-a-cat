@@ -11,14 +11,16 @@ public class controller : MonoBehaviour {
 	
 	}
 
-	void FixedUpdate(){
-		rigidbody.angularVelocity = Vector3.zero;
-		Vector3 vel = rigidbody.velocity;
-		vel.z = 0;
-		rigidbody.velocity = vel;
-		transform.rotation = Quaternion.identity;
+//	void FixedUpdate(){
+//		rigidbody2D.angularVelocity = Vector3.zero;
+//		Vector3 vel = rigidbody.velocity;
+//		vel.z = 0;
+//		rigidbody.velocity = vel;
+//		transform.rotation = Quaternion.identity;
+//
+//	}
 
-	}
+
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKey (KeyCode.RightArrow)) {
@@ -26,21 +28,21 @@ public class controller : MonoBehaviour {
 //			move.x += moveSpeed;
 //			transform.position = move;
 			
-			rigidbody.AddForce(Vector3.right * moveSpeed);
+			rigidbody2D.AddForce(Vector2.right * moveSpeed);
 		}
 		else if (Input.GetKey (KeyCode.LeftArrow)) {
 //			Vector3 move = transform.position;
 //			move.x -= moveSpeed;
 //			transform.position = move;
 			
-			rigidbody.AddForce(Vector3.left * moveSpeed);
+			rigidbody2D.AddForce(Vector2.right * -moveSpeed);
 		}
 
-		if (Input.GetKeyDown (KeyCode.UpArrow) && rigidbody.collider) {
+		if (Input.GetKeyDown (KeyCode.UpArrow) && rigidbody2D.collider) {
 //			Vector3 move = transform.position;
 //			move.y += moveSpeed;
 //			transform.position = move;
-			rigidbody.AddForce(Vector3.up * jumpSpeed);
+			rigidbody2D.AddForce(Vector2.up * jumpSpeed);
 		}
 
 	}
