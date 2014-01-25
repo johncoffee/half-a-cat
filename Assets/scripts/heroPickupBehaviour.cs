@@ -48,14 +48,14 @@ public class heroPickupBehaviour : MonoBehaviour {
 //		Debug.Log ("OnCollisionEnter");
 //	}
 	
-	void OnTriggerEnter(Collider other) {
+	void OnTriggerEnter2D(Collider2D other) {
 		currentHidingPlace = other.gameObject;
 		isInFrontOfAHidingPlace = true;
-//		Debug.Log ("OnTriggerEnter");
+		Debug.Log ("OnTriggerEnter");
 	}
 
-	void OnTriggerExit(Collider other) {
-//		Debug.Log ("OnTriggerExit");
+	void OnTriggerExit2D(Collider2D other) {
+		Debug.Log ("OnTriggerExit");
 		isInFrontOfAHidingPlace = false;
 	}
 }
