@@ -11,7 +11,7 @@ public class GameLogic : MonoBehaviour
 
 
 	public GameObject player1ui, player2ui;
-	public GUIText player1PointsGUI, player2PointsGUI;
+	public GUIText player1PointsGUI, player2PointsGUI, numberOfThingsGUIText;
 
 	public int playersTurn = 0;
 
@@ -20,6 +20,7 @@ public class GameLogic : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		setPlayer (0);
 			initTurn ();
 	}
 
@@ -54,15 +55,24 @@ public class GameLogic : MonoBehaviour
 	
 	void switchPlayer () {
 		playersTurn = 1 - playersTurn;
-		hero.personality = playersTurn;
-		
-		hero.renderer.material.SetColor( "_Color", (playersTurn == 0) ? Color.red : Color.blue );
-		Debug.Log ("current Player " + playersTurn);
+		setPlayer (playersTurn);
+	}
 
+	void setPlayer (int playerNumber) {
+		playersTurn = playerNumber;
+		hero.personality = playerNumber;
+		hero.renderer.material.SetColor( "_Color", (playerNumber == 0) ? Color.red : Color.blue );
+		Debug.Log("current Player " + playerNumber);
 
-		if (playersTurn == 0) {
+		numberOfThingsGUIText.text = hero.numberOfThings.ToString ();
 
-
+		if (playerNumber == 0) {
+			player1ui.SetActive(true);
+			player2ui.SetActive(false);
+		}
+		if (playerNumber == 1) {
+			player1ui.SetActive(false);
+			player2ui.SetActive(true);
 		}
 	}
 	

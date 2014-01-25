@@ -2,8 +2,9 @@
 using System.Collections;
 
 public class controller : MonoBehaviour {
-
+	
 	public float moveSpeed = 0.1f;
+	public float jumpSpeed = 0.1f;
 
 	// Use this for initialization
 	void Start () {
@@ -13,20 +14,25 @@ public class controller : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKey (KeyCode.RightArrow)) {
-			Vector3 move = transform.position;
-			move.x += moveSpeed;
-			transform.position = move;
+//			Vector3 move = transform.position;
+//			move.x += moveSpeed;
+//			transform.position = move;
+			
+			rigidbody.AddForce(Vector3.right * moveSpeed);
 		}
 		else if (Input.GetKey (KeyCode.LeftArrow)) {
-			Vector3 move = transform.position;
-			move.x -= moveSpeed;
-			transform.position = move;
+//			Vector3 move = transform.position;
+//			move.x -= moveSpeed;
+//			transform.position = move;
+			
+			rigidbody.AddForce(Vector3.left * moveSpeed);
 		}
 
 		if (Input.GetKey (KeyCode.UpArrow)) {
-			Vector3 move = transform.position;
-			move.y += moveSpeed;
-			transform.position = move;
+//			Vector3 move = transform.position;
+//			move.y += moveSpeed;
+//			transform.position = move;
+			rigidbody.AddForce(Vector3.up * jumpSpeed);
 		}
 
 	}

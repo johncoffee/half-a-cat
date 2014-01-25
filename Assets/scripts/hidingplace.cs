@@ -10,7 +10,6 @@ public class hidingplace : MonoBehaviour {
 			return numberOfThings;
 		}
 		set {
-			Debug.Log("hide 1 thing");
 			numberOfThings = value;
 		}
 	}
@@ -19,6 +18,9 @@ public class hidingplace : MonoBehaviour {
 	public bool HasThings() {
 		return numberOfThings > 0;
 	}
+
+
+
 
 	// Use this for initialization
 	void Start () {

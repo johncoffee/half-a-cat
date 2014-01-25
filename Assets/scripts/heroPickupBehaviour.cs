@@ -6,8 +6,12 @@ public class heroPickupBehaviour : MonoBehaviour {
 	public bool isInFrontOfAHidingPlace = false;
 	public GameObject currentHidingPlace;
 
-	public int numberOfThings = 3;
+	public int numberOfThings = 5;
 	public int personality;
+
+	public int player1Points = 0, player2Points = 0;
+
+	public GUIText player1PointsGUI, player2PointsGUI, numberOfThingsGUIText;
 
 	// Use this for initialization
 	void Start () {
@@ -17,22 +21,26 @@ public class heroPickupBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Space)) {
-			if (personality == 0 && isInFrontOfAHidingPlace && numberOfThings > 0) {
+			if (personality == 0 && isInFrontOfAHidingPlace && numberOfThings > 0) 
+			{
 				currentHidingPlace.GetComponent<hidingplace>().NumberOfThings += 1;
 				numberOfThings--;
-				Debug.Log("got thing " + numberOfThings);
+				player1Points++;
+				player1PointsGUI.text = player1Points.ToString();
+				Debug.Log("placed thing");
 			}
 			else if (personality == 1 && isInFrontOfAHidingPlace) {
-				if (currentHidingPlace.GetComponent<hidingplace>().HasThings()) {
+				if (currentHidingPlace.GetComponent<hidingplace>().HasThings()) 
+				{
 					currentHidingPlace.GetComponent<hidingplace>().NumberOfThings -= 1;
 					numberOfThings++;
-					Debug.Log("placed thing. " + numberOfThings);
-				}
-				else {
-					Debug.Log("has no things");
+					Debug.Log("took thing");
+					player2Points++;
+					player2PointsGUI.text = player2Points.ToString();
 				}
 			}
-//			currentHidingPlace
+
+			numberOfThingsGUIText.text = numberOfThings.ToString();
 		}
 	}
 //
