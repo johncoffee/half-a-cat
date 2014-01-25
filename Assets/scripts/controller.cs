@@ -10,7 +10,15 @@ public class controller : MonoBehaviour {
 	void Start () {
 	
 	}
-	
+
+	void FixedUpdate(){
+		rigidbody.angularVelocity = Vector3.zero;
+		Vector3 vel = rigidbody.velocity;
+		vel.z = 0;
+		rigidbody.velocity = vel;
+		transform.rotation = Quaternion.identity;
+
+	}
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKey (KeyCode.RightArrow)) {
@@ -28,7 +36,7 @@ public class controller : MonoBehaviour {
 			rigidbody.AddForce(Vector3.left * moveSpeed);
 		}
 
-		if (Input.GetKey (KeyCode.UpArrow)) {
+		if (Input.GetKeyDown (KeyCode.UpArrow) && rigidbody.collider) {
 //			Vector3 move = transform.position;
 //			move.y += moveSpeed;
 //			transform.position = move;
