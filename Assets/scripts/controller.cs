@@ -38,6 +38,10 @@ public class controller : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+		heroPickupBehaviour hero = GetComponent<heroPickupBehaviour> ();
+		if (hero.switching) {
+			return;
+		}
 
 		if (Input.GetKey (KeyCode.RightArrow) || Input.GetKey (KeyCode.D)) {
 			Vector2 move = rigidbody2D.velocity;
