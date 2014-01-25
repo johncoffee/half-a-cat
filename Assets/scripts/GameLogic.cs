@@ -44,6 +44,8 @@ public class GameLogic : MonoBehaviour
 //		Debug.Log ("Player " + playersTurn + "s turn");
 	    yield return new WaitForSeconds (playerTurnDuration);
 
+		hero.rigidbody2D.velocity = new Vector2 (0,0);
+		Debug.Log (hero.rigidbody2D.velocity);
 		Cloak ();
 
 		yield return new WaitForSeconds (switchLaptopDuration);
