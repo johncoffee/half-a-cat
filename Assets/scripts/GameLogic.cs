@@ -16,6 +16,7 @@ public class GameLogic : MonoBehaviour
 	public int playersTurn = 0;
 
 	public heroPickupBehaviour hero;
+	public CountdownBehaviour countdownTimer;
 
 	// Use this for initialization
 	void Start ()
@@ -42,9 +43,13 @@ public class GameLogic : MonoBehaviour
 	IEnumerator NextTurn ()
 	{
 //		Debug.Log ("Player " + playersTurn + "s turn");
+		int dur = playerTurnDuration;
+		countdownTimer.reset (dur);
 	    yield return new WaitForSeconds (playerTurnDuration);
 
 		hero.rigidbody2D.velocity = new Vector2 (0,0);
+		hero.switching = true;
+
 		Debug.Log (hero.rigidbody2D.velocity);
 		Cloak ();
 
@@ -52,6 +57,8 @@ public class GameLogic : MonoBehaviour
 
 		switchPlayer ();
 	    initTurn ();
+
+		hero.switching = false;
 	}
 
 	

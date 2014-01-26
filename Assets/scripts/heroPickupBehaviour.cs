@@ -3,6 +3,8 @@ using System.Collections;
 
 public class heroPickupBehaviour : MonoBehaviour {
 
+	public bool switching;
+
 	public bool isInFrontOfAHidingPlace = false;
 	public GameObject currentHidingPlace;
 
@@ -26,7 +28,7 @@ public class heroPickupBehaviour : MonoBehaviour {
 				currentHidingPlace.GetComponent<hidingplace>().NumberOfThings += 1;
 				numberOfThings--;
 				player1Points++;
-				player1PointsGUI.text = player1Points.ToString() + " points";
+				player1PointsGUI.text = player1Points.ToString();
 				Debug.Log("placed thing");
 			}
 			else if (personality == 1 && isInFrontOfAHidingPlace) {
@@ -36,7 +38,7 @@ public class heroPickupBehaviour : MonoBehaviour {
 					numberOfThings++;
 					Debug.Log("took thing");
 					player2Points++;
-					player2PointsGUI.text = player2Points.ToString() + " points";
+					player2PointsGUI.text = player2Points.ToString();
 				}
 			}
 
@@ -48,16 +50,24 @@ public class heroPickupBehaviour : MonoBehaviour {
 //		Debug.Log ("OnCollisionEnter");
 //	}
 	
+<<<<<<< HEAD
 	void OnTriggerEnter2D(Collider2D other) {
 //		if () {
 //
 //		}
+=======
+	void OnTriggerEnter(Collider other) {
+>>>>>>> c7e36462ac8871704b9ace6ad46acfede3ea5a30
 		currentHidingPlace = other.gameObject;
 		isInFrontOfAHidingPlace = true;
 //		Debug.Log ("OnTriggerEnter");
 	}
 
+<<<<<<< HEAD
+	void OnTriggerExit(Collider other) {
+=======
 	void OnTriggerExit2D(Collider2D other) {
+>>>>>>> newstuff
 //		Debug.Log ("OnTriggerExit");
 		isInFrontOfAHidingPlace = false;
 	}
