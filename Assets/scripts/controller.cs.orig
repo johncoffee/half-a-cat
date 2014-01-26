@@ -9,22 +9,13 @@ public class controller : MonoBehaviour {
 	public float horzFriction = 0.5f;
 
 	public bool isActive;
-	private bool jumped = false;
-
-	private bool jumped;
 
 	// Use this for initialization
 	void Start () {
 	
 	}
 
-	void OnCollisionEnter2D(Collision2D collision) {
-		if (collision.gameObject.tag == "Floor") {
-			jumped = false;
-		}
-	}
-
-	void FixedUpdate(){
+	void FixedUpdate() {
 //		rigidbody2D.angularVelocity = Vector3.zero;
 //		Vector3 vel = rigidbody.velocity;
 //		vel.z = 0;
@@ -58,17 +49,27 @@ public class controller : MonoBehaviour {
 				//			rigidbody2D.AddForce(Vector2.right * -moveSpeed);
 			}
 			
-		if ((Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown (KeyCode.W)) && !jumped) {
+			
+			if (Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown (KeyCode.W)) {
 				//			Vector3 move = transform.position;
 				//			move.y += moveSpeed;
 				//			transform.position = move;
-
 				rigidbody2D.AddForce(Vector2.up * jumpSpeed);
-
-				jumped = true;
 			}
 		}
 
+<<<<<<< HEAD
+		if ((Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown (KeyCode.W)) && !jumped) {
+//			Vector3 move = transform.position;
+//			move.y += moveSpeed;
+//			transform.position = move;
+
+			rigidbody2D.AddForce(Vector2.up * jumpSpeed);
+
+			jumped = true;
+		}
+=======
+>>>>>>> 2acbe4d11d86420959812a1fdf4aab14d38416b9
 
 	}
 }
