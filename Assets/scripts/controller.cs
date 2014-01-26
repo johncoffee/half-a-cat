@@ -55,15 +55,11 @@ public class controller : MonoBehaviour {
 
 		}
 
-
-<<<<<<< HEAD
-		if (Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown (KeyCode.W)) {
-=======
 		if ((Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown (KeyCode.W)) && !jumped) {
 //			Vector3 move = transform.position;
 //			move.y += moveSpeed;
 //			transform.position = move;
->>>>>>> 7bc57fec9df1434faf02488ba32f7ace36c196b8
+
 			rigidbody2D.AddForce(Vector2.up * jumpSpeed);
 
 			jumped = true;

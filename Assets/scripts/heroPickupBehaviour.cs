@@ -56,11 +56,8 @@ public class heroPickupBehaviour : MonoBehaviour {
 //		Debug.Log ("OnTriggerEnter");
 	}
 
-<<<<<<< HEAD
-	void OnTriggerExit(Collider other) {
-=======
+
 	void OnTriggerExit2D(Collider2D other) {
->>>>>>> newstuff
 //		Debug.Log ("OnTriggerExit");
 		isInFrontOfAHidingPlace = false;
 	}

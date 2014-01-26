@@ -43,8 +43,7 @@ public class GameLogic : MonoBehaviour
 	IEnumerator NextTurn ()
 	{
 //		Debug.Log ("Player " + playersTurn + "s turn");
-		int dur = playerTurnDuration;
-		countdownTimer.reset (dur);
+		countdownTimer.reset (playerTurnDuration);
 	    yield return new WaitForSeconds (playerTurnDuration);
 
 		hero.rigidbody2D.velocity = new Vector2 (0,0);
