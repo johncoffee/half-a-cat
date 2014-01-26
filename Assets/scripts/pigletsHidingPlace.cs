@@ -3,7 +3,7 @@ using System.Collections;
 
 public class pigletsHidingPlace : MonoBehaviour {
 
-	public GameObject pigletHiding;
+	public bool hasPiglet;
 		
 	public bool canHideHere = true;
 

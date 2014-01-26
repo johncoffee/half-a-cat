@@ -3,7 +3,7 @@ using System.Collections;
 
 public class piglet : MonoBehaviour {
 
-	bool isInFrontOfAHidingPlace = false;
+	private bool isInFrontOfAHidingPlace = false;
 	private pigletsHidingPlace currentHidingPlace;
 
 
@@ -19,10 +19,12 @@ public class piglet : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			hide();
-		}
-	}
+		if (gameObject.GetComponent<controller> ().isActive) {
+					if (Input.GetKeyDown (KeyCode.Space)) {
+							hide ();
+					}
+			}
+ 	}
 
 	void hide() {
 
@@ -32,12 +34,14 @@ public class piglet : MonoBehaviour {
 			if (isHiding) 
 			{
 //				Debug.Log("unhide..");
+				currentHidingPlace.hasPiglet = false;
 				isHiding = false;
 				loc.z += 20f;
 			}
 			else if (currentHidingPlace.canHideHere)
 			{
 //				Debug.Log("hide..");
+				currentHidingPlace.hasPiglet = true;
 				isHiding = true;
 				loc.z -= 20f;
 			}
@@ -60,6 +64,13 @@ public class piglet : MonoBehaviour {
 	
 	void OnTriggerExit2D(Collider2D other) {
 //		Debug.Log ("OnTriggerExit");
-		isInFrontOfAHidingPlace = false;
+		//		Debug.Log ("OnTriggerExit");
+		pigletsHidingPlace hidingPlace = other.gameObject.GetComponent<pigletsHidingPlace>();
+		if (hidingPlace != null) 
+		{
+			isInFrontOfAHidingPlace = false;
+		}
+
+	
 	}
 }
