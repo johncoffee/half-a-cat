@@ -8,12 +8,14 @@ public class controller : MonoBehaviour {
 
 	public float horzFriction = 0.5f;
 
+	public bool isActive;
+
 	// Use this for initialization
 	void Start () {
 	
 	}
 
-	void FixedUpdate(){
+	void FixedUpdate() {
 //		rigidbody2D.angularVelocity = Vector3.zero;
 //		Vector3 vel = rigidbody.velocity;
 //		vel.z = 0;
@@ -29,30 +31,33 @@ public class controller : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
 
-		if (Input.GetKey (KeyCode.RightArrow) || Input.GetKey (KeyCode.D)) {
-			Vector2 move = rigidbody2D.velocity;
-			move.x += moveSpeed;
-			rigidbody2D.velocity = move;
+		if (isActive) {
 			
-//			rigidbody2D.AddForce(Vector2.right * moveSpeed);
-		}
-		else if (Input.GetKey (KeyCode.LeftArrow) || Input.GetKey (KeyCode.A)) {
-			Vector2 move = rigidbody2D.velocity;
-			move.x -= moveSpeed;
-			rigidbody2D.velocity = move;
+			if (Input.GetKey (KeyCode.RightArrow) || Input.GetKey (KeyCode.D)) {
+				Vector2 move = rigidbody2D.velocity;
+				move.x += moveSpeed;
+				rigidbody2D.velocity = move;
+				
+				//			rigidbody2D.AddForce(Vector2.right * moveSpeed);
+			}
+			else if (Input.GetKey (KeyCode.LeftArrow) || Input.GetKey (KeyCode.A)) {
+				Vector2 move = rigidbody2D.velocity;
+				move.x -= moveSpeed;
+				rigidbody2D.velocity = move;
+				
+				//			rigidbody2D.AddForce(Vector2.right * -moveSpeed);
+			}
 			
-//			rigidbody2D.AddForce(Vector2.right * -moveSpeed);
+			
+			if (Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown (KeyCode.W)) {
+				//			Vector3 move = transform.position;
+				//			move.y += moveSpeed;
+				//			transform.position = move;
+				rigidbody2D.AddForce(Vector2.up * jumpSpeed);
+			}
 		}
 
-
-		if (Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown (KeyCode.W)) {
-//			Vector3 move = transform.position;
-//			move.y += moveSpeed;
-//			transform.position = move;
-			rigidbody2D.AddForce(Vector2.up * jumpSpeed);
-		}
 
 	}
 }

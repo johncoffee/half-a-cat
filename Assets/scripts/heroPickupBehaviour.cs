@@ -49,6 +49,9 @@ public class heroPickupBehaviour : MonoBehaviour {
 //	}
 	
 	void OnTriggerEnter2D(Collider2D other) {
+//		if () {
+//
+//		}
 		currentHidingPlace = other.gameObject;
 		isInFrontOfAHidingPlace = true;
 //		Debug.Log ("OnTriggerEnter");
