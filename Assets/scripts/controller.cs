@@ -11,7 +11,6 @@ public class controller : MonoBehaviour {
 	public bool isActive;
 	private bool jumped = false;
 
-	private bool jumped;
 
 	// Use this for initialization
 	void Start () {
