@@ -9,6 +9,7 @@ public class controller : MonoBehaviour {
 	public float horzFriction = 0.5f;
 
 	public bool isActive;
+	private bool jumped = false;
 
 	// Use this for initialization
 	void Start () {
