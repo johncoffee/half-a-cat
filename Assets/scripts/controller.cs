@@ -64,7 +64,7 @@ public class controller : MonoBehaviour {
 
 				rigidbody2D.AddForce(Vector2.up * jumpSpeed);
 
-				jumped = true;
+//				jumped = true;
 			}
 		}
 
