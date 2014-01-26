@@ -62,10 +62,14 @@ public class PigletPoohGame : MonoBehaviour
 		if (playersTurn == 0) {
 			piglet.GetComponent<controller>().isActive = true;
 			pooh.GetComponent<controller>().isActive = false;
+			pooh.GetComponent<AudioSource>().Stop();
+			piglet.GetComponent<AudioSource>().Play();
 		}
 		else if (playersTurn == 1) {
 			piglet.GetComponent<controller>().isActive = false;
 			pooh.GetComponent<controller>().isActive = true;
+			pooh.GetComponent<AudioSource>().Play();
+			piglet.GetComponent<AudioSource>().Stop();
 		}
 	}
 	
