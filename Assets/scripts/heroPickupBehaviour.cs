@@ -13,8 +13,6 @@ public class heroPickupBehaviour : MonoBehaviour {
 
 	public int player1Points = 0, player2Points = 0;
 
-	public GUIText player1PointsGUI, player2PointsGUI, numberOfThingsGUIText;
-
 	// Use this for initialization
 	void Start () {
 	
@@ -28,7 +26,6 @@ public class heroPickupBehaviour : MonoBehaviour {
 				currentHidingPlace.GetComponent<hidingplace>().NumberOfThings += 1;
 				numberOfThings--;
 				player1Points++;
-				player1PointsGUI.text = player1Points.ToString();
 				Debug.Log("placed thing");
 			}
 			else if (personality == 1 && isInFrontOfAHidingPlace) {
@@ -38,11 +35,10 @@ public class heroPickupBehaviour : MonoBehaviour {
 					numberOfThings++;
 					Debug.Log("took thing");
 					player2Points++;
-					player2PointsGUI.text = player2Points.ToString();
 				}
 			}
 
-			numberOfThingsGUIText.text = numberOfThings.ToString();
+//			numberOfThingsGUIText.text = numberOfThings.ToString();
 		}
 	}
 //
