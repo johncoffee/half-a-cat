@@ -10,6 +10,8 @@ public class controller : MonoBehaviour {
 
 	public bool isActive;
 
+	private bool jumped;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -55,12 +57,14 @@ public class controller : MonoBehaviour {
 				//			rigidbody2D.AddForce(Vector2.right * -moveSpeed);
 			}
 			
-		if (Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown (KeyCode.W)) {
+		if ((Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown (KeyCode.W)) && !jumped) {
 				//			Vector3 move = transform.position;
 				//			move.y += moveSpeed;
 				//			transform.position = move;
 
 				rigidbody2D.AddForce(Vector2.up * jumpSpeed);
+
+				jumped = true;
 			}
 		}
 
